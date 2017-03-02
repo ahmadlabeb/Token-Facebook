@@ -6,6 +6,8 @@ class album(models.Model):
     albume_title=models.CharField(max_length=250)
     genor=models.CharField(max_length=250)
     albume_logo=models.CharField(max_length=1000)
+    def __str__(self):
+        return self.albume_title+'_'+self.artist
 
 class song(models.Model):
     albums=models.ForeignKey(album,on_delete=models.CASCADE)
